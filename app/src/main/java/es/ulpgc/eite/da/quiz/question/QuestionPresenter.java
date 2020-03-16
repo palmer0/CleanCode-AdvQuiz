@@ -79,10 +79,6 @@ public class QuestionPresenter implements QuestionContract.Presenter {
       view.get().displayQuestion(state);
     }
 
-    /*
-    // update the view
-    view.get().displayQuestion(state);
-    */
   }
 
 
