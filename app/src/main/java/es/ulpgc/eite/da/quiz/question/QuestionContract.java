@@ -35,6 +35,7 @@ public interface QuestionContract {
     String getOption2();
     String getOption3();
     boolean isCorrectOption(int option);
+    boolean hasQuizFinished();
     void setQuizIndex(int index);
     String getAnswer();
     void updateQuizIndex();

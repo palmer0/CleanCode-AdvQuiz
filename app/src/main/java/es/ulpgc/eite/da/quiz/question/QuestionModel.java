@@ -42,14 +42,25 @@ public class QuestionModel implements QuestionContract.Model {
     return false;
   }
 
+
   @Override
   public void setQuizIndex(int index) {
     quizIndex=index;
   }
 
   @Override
+  public boolean hasQuizFinished(){
+    if(quizIndex+4 < quizArray.length-1) {
+      return false;
+    }
+
+    return true;
+  }
+
+  @Override
   public void updateQuizIndex() {
     quizIndex=quizIndex+5;
+
   }
 
   @Override

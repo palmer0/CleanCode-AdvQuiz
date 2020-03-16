@@ -75,7 +75,11 @@ public class QuestionPresenter implements QuestionContract.Presenter {
     // update the view
     if(state.answerCheated){
       state.answerCheated=false;
-      onNextButtonClicked();
+      //onNextButtonClicked();
+
+      if(!model.hasQuizFinished()) {
+        onNextButtonClicked();
+      }
 
     } else {
       view.get().displayQuestion(state);
@@ -142,7 +146,10 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
   private void enableNextButton() {
     state.optionEnabled=false;
-    state.nextEnabled=true;
+
+    if(!model.hasQuizFinished()) {
+      state.nextEnabled=true;
+    }
   }
 
   @Override
