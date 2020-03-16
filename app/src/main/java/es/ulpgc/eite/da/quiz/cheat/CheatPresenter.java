@@ -45,6 +45,8 @@ public class CheatPresenter implements CheatContract.Presenter {
   public void onResume() {
     Log.e(TAG, "onResume()");
 
+    //TODO: falta implementacion
+
     // use passed state if is necessary
     QuestionToCheatState savedState = router.getStateFromQuestionScreen();
     if (savedState != null) {

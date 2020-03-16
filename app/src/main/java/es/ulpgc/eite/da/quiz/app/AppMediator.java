@@ -19,9 +19,6 @@ public class AppMediator extends Application {
 
     questionState = new QuestionState();
     cheatState = new CheatState();
-
-    //questionToCheatState = new QuestionToCheatState();
-    //cheatToQuestionState= new CheatToQuestionState();
   }
 
   public CheatState getCheatState() {
@@ -38,13 +35,13 @@ public class AppMediator extends Application {
 
   public CheatToQuestionState getCheatToQuestionState() {
     CheatToQuestionState state = cheatToQuestionState;
-    cheatToQuestionState=null; // ?
+    cheatToQuestionState=null; // reset state after getting it
     return state;
   }
 
   public QuestionToCheatState getQuestionToCheatState() {
     QuestionToCheatState state = questionToCheatState;
-    questionToCheatState = null; // ?
+    questionToCheatState = null; // reset state after getting it
     return state;
   }
 
