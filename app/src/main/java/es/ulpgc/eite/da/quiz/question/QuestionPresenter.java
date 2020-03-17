@@ -45,6 +45,8 @@ public class QuestionPresenter implements QuestionContract.Presenter {
   public void onRestart() {
     Log.e(TAG, "onRestart()");
 
+    //TODO: falta implementacion
+
     // update the model
     model.setQuizIndex(state.quizIndex);
 
