@@ -56,7 +56,7 @@ public class QuestionActivity
     //Log.e(TAG, "displayQuestion()");
 
     // deal with the answer
-    ((TextView) findViewById(R.id.qestionTextView)).setText(viewModel.question);
+    ((TextView) findViewById(R.id.questionTextView)).setText(viewModel.question);
     ((TextView) findViewById(R.id.option1Button)).setText(viewModel.option1);
     ((TextView) findViewById(R.id.option2Button)).setText(viewModel.option2);
     ((TextView) findViewById(R.id.option3Button)).setText(viewModel.option3);

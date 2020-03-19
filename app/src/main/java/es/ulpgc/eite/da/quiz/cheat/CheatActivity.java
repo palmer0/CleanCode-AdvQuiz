@@ -25,7 +25,7 @@ public class CheatActivity
     ((TextView) findViewById(R.id.noButton)).setText(R.string.no_button);
     ((TextView) findViewById(R.id.yesButton)).setText(R.string.yes_button);
 
-    ((TextView) findViewById(R.id.waningTextView))
+    ((TextView) findViewById(R.id.warningTextView))
         .setText(R.string.warning_message);
 
     // do the setup

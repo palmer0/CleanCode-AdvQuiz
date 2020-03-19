@@ -8,7 +8,7 @@
     tools:context=".cheat.CheatActivity">
 
     <TextView
-        android:id="@+id/waningTextView"
+        android:id="@+id/warningTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -28,7 +28,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/waningTextView">
+        app:layout_constraintTop_toBottomOf="@+id/warningTextView">
 
         <Button
             android:id="@+id/yesButton"

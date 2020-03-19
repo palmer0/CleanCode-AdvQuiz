@@ -67,7 +67,7 @@ public class QuizInstrumentedTests {
     //después de cargar pregunta del cuestionario
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -87,7 +87,7 @@ public class QuizInstrumentedTests {
     //en pantalla Question antes del giro
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -108,7 +108,7 @@ public class QuizInstrumentedTests {
     //después de cargar pregunta del cuestionario
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -128,7 +128,7 @@ public class QuizInstrumentedTests {
     //corresponde con respuesta correcta
     //mostraremos botones Option y Cheat desactivados
     //mostraremos botón Next activado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -150,7 +150,7 @@ public class QuizInstrumentedTests {
     //después de cargar pregunta del cuestionario
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -170,7 +170,7 @@ public class QuizInstrumentedTests {
     //corresponde con respuesta incorrecta
     //mostraremos botones Option desactivado
     //mostraremos botón Next y Cheat activado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -193,7 +193,7 @@ public class QuizInstrumentedTests {
     //mostraremos mensaje Correct ya que la respuesta del usuario fue correcta
     //mostraremos botones Option y Cheat desactivados
     //mostraremos botón Next activado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -216,7 +216,7 @@ public class QuizInstrumentedTests {
     //existente en pantalla Question antes del giro
     //mostraremos botones Option y Cheat desactivados
     //mostraremos botón Next activado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -239,7 +239,7 @@ public class QuizInstrumentedTests {
     //mostraremos mensaje Incorrect ya que respuesta del usuario fue incorrecta
     //mostraremos botones Option y Cheat desactivados
     //mostraremos botón Next activado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -262,7 +262,7 @@ public class QuizInstrumentedTests {
     //existente en pantalla Question antes del giro
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -284,7 +284,7 @@ public class QuizInstrumentedTests {
     //mostraremos mensaje Correct ya que la respuesta del usuario fue correcta
     //mostraremos botones Option y Cheat desactivados
     //mostraremos botón Next activado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -304,7 +304,7 @@ public class QuizInstrumentedTests {
     //mostraremos idéntica pantalla Question con siguiente pregunta  ya cargada
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[5])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[5])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[6])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[7])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[8])));
@@ -326,7 +326,7 @@ public class QuizInstrumentedTests {
     //mostraremos mensaje Correct ya que la respuesta del usuario fue correcta
     //mostraremos botones Option y Cheat desactivados
     //mostraremos botón Next activado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -348,7 +348,7 @@ public class QuizInstrumentedTests {
     //mostraremos idéntica pantalla Question con siguiente pregunta  ya cargada
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[5])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[5])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[6])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[7])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[8])));
@@ -371,7 +371,7 @@ public class QuizInstrumentedTests {
     //ya que la respuesta del usuario fue incorrecta
     //mostraremos botones Option desactivado
     //mostraremos botón Next y Cheat activados
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -391,7 +391,7 @@ public class QuizInstrumentedTests {
     //mostraremos idéntica pantalla Question con siguiente pregunta  ya cargada
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[5])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[5])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[6])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[7])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[8])));
@@ -414,7 +414,7 @@ public class QuizInstrumentedTests {
     //ya que la respuesta del usuario fue incorrecta
     //mostraremos botones Option desactivado
     //mostraremos botón Next y Cheat activados
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[0])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[0])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[1])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[2])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[3])));
@@ -436,7 +436,7 @@ public class QuizInstrumentedTests {
     //mostraremos idéntica pantalla Question con siguiente pregunta  ya cargada
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[5])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[5])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[6])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[7])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[8])));
@@ -460,7 +460,7 @@ public class QuizInstrumentedTests {
     //mostraremos botón Next desactivado
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.nextButton))).perform(click());
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[5])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[5])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[6])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[7])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[8])));
@@ -479,7 +479,7 @@ public class QuizInstrumentedTests {
     //visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //antes de mostrar respuesta correcta
     //mostraremos botones Yes y NO activados
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -498,7 +498,7 @@ public class QuizInstrumentedTests {
     //mostraremos botón Next desactivado
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.nextButton))).perform(click());
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[5])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[5])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[6])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[7])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[8])));
@@ -518,7 +518,7 @@ public class QuizInstrumentedTests {
     //visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //antes de mostrar respuesta correcta
     //mostraremos botones Yes y NO activados
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -538,7 +538,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.option2Button))).perform(click());
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[5])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[5])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[6])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[7])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[8])));
@@ -557,7 +557,7 @@ public class QuizInstrumentedTests {
     //visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //antes de mostrar respuesta correcta
     //mostraremos botones Yes y NO activados
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -577,7 +577,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.option2Button))).perform(click());
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[5])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[5])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[6])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[7])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[8])));
@@ -597,7 +597,7 @@ public class QuizInstrumentedTests {
     //visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //antes de mostrar respuesta correcta
     //mostraremos botones Yes y NO activados
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -615,7 +615,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -630,7 +630,7 @@ public class QuizInstrumentedTests {
     //antes de iniciar pantalla Cheat
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[5])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[5])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[6])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[7])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[8])));
@@ -657,7 +657,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -673,7 +673,7 @@ public class QuizInstrumentedTests {
     // antes de iniciar pantalla Cheat
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[5])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[5])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[6])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[7])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[8])));
@@ -696,7 +696,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -709,7 +709,7 @@ public class QuizInstrumentedTests {
     //visualizaremos respuesta correcta
     //a pregunta del cuestionario mostrada actualmente en pantalla Question
     //mostraremos botones Yes y NO desactivados
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(quiz[8])));
     (onView(withId(R.id.noButton))).check(matches(not(isEnabled())));
     (onView(withId(R.id.yesButton))).check(matches(not(isEnabled())));
@@ -726,7 +726,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -740,7 +740,7 @@ public class QuizInstrumentedTests {
     //visualizaremos respuesta correcta
     //a pregunta del cuestionario mostrada actualmente en pantalla Question
     //mostraremos botones Yes y NO desactivados
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(quiz[8])));
     (onView(withId(R.id.noButton))).check(matches(not(isEnabled())));
     (onView(withId(R.id.yesButton))).check(matches(not(isEnabled())));
@@ -760,7 +760,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -773,7 +773,7 @@ public class QuizInstrumentedTests {
     //visualizaremos respuesta correcta
     //a pregunta del cuestionario mostrada actualmente en pantalla Question
     //mostraremos botones Yes y NO desactivados
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(quiz[8])));
     (onView(withId(R.id.noButton))).check(matches(not(isEnabled())));
     (onView(withId(R.id.yesButton))).check(matches(not(isEnabled())));
@@ -793,7 +793,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -807,7 +807,7 @@ public class QuizInstrumentedTests {
     //visualizaremos respuesta correcta
     //a pregunta del cuestionario mostrada actualmente en pantalla Question
     //mostraremos botones Yes y NO desactivados
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(quiz[8])));
     (onView(withId(R.id.noButton))).check(matches(not(isEnabled())));
     (onView(withId(R.id.yesButton))).check(matches(not(isEnabled())));
@@ -824,7 +824,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -840,7 +840,7 @@ public class QuizInstrumentedTests {
     //antes de iniciar pantalla Cheat
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[10])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[10])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[11])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[12])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[13])));
@@ -867,7 +867,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -884,7 +884,7 @@ public class QuizInstrumentedTests {
     //antes de iniciar pantalla Cheat
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[10])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[10])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[11])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[12])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[13])));
@@ -908,7 +908,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -925,7 +925,7 @@ public class QuizInstrumentedTests {
     //antes de iniciar pantalla Cheat
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[10])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[10])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[11])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[12])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[13])));
@@ -952,7 +952,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -970,7 +970,7 @@ public class QuizInstrumentedTests {
     //antes de iniciar pantalla Cheat
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[10])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[10])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[11])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[12])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[13])));
@@ -1010,7 +1010,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -1027,7 +1027,7 @@ public class QuizInstrumentedTests {
     //antes de iniciar pantalla Cheat
     //mostraremos botones Option y Cheat activados
     //mostraremos botón Next desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[45])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[45])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[46])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[47])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[48])));
@@ -1072,7 +1072,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.nextButton))).perform(click());
     (onView(withId(R.id.option2Button))).perform(click());
     (onView(withId(R.id.cheatButton))).perform(click());
-    (onView(withId(R.id.waningTextView))).check(matches(withText(warning)));
+    (onView(withId(R.id.warningTextView))).check(matches(withText(warning)));
     (onView(withId(R.id.answerTextView))).check(matches(withText(empty_answer)));
     (onView(withId(R.id.noButton))).check(matches(isEnabled()));
     (onView(withId(R.id.yesButton))).check(matches(isEnabled()));
@@ -1089,7 +1089,7 @@ public class QuizInstrumentedTests {
     //donde mostraremos pregunta del cuestionario existente
     //antes de iniciar pantalla Cheat
     //mostraremos botones Option, Next y Cheat desactivado
-    (onView(withId(R.id.qestionTextView))).check(matches(withText(quiz[45])));
+    (onView(withId(R.id.questionTextView))).check(matches(withText(quiz[45])));
     (onView(withId(R.id.option1Button))).check(matches(withText(quiz[46])));
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[47])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[48])));
