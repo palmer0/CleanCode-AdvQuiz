@@ -8,7 +8,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
+import es.ulpgc.eite.da.quiz.app.AppMediator;
 import es.ulpgc.eite.da.quiz.cheat.CheatActivity;
 import es.ulpgc.eite.da.quiz.question.QuestionActivity;
 
@@ -16,9 +18,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(RobolectricTestRunner.class)
+//@Config( manifest = "../main/AndroidManifest.xml")
+@Config(application = AppMediator.class)
 public class QuizUnitTests {
 
-  TextView question, reply, warning,answer;
+  QuestionActivity screen1;
+  CheatActivity screen2;
+
+  TextView question, reply, warning, answer;
   Button option1, option2, option3, next, cheat, yes, no;
 
   String[] quiz;
@@ -27,8 +34,8 @@ public class QuizUnitTests {
   @Before
   public void setup(){
 
-    QuestionActivity screen1=Robolectric.setupActivity(QuestionActivity.class);
-    CheatActivity screen2=Robolectric.setupActivity(CheatActivity.class);
+    screen1=Robolectric.setupActivity(QuestionActivity.class);
+    screen2=Robolectric.setupActivity(CheatActivity.class);
 
     quiz = screen1.getResources().getStringArray(R.array.quiz_array);
 
@@ -316,12 +323,13 @@ public class QuizUnitTests {
 
     //  WHEN 
     //  al pulsar botón No
+    no.performClick();
 
     //  THEN 
     //  volveremos a pantalla Question donde mostraremos pregunta
     //  del cuestionario existente antes de iniciar pantalla Cheat
-    //  mostraremos botones Option y Cheat activados
-    //  mostraremos botón Next desactivado
+    //  mostraremos botones Next y Cheat activados
+    //  mostraremos botón Option desactivado
     assertThat(question.getText().toString(), equalTo(quiz[0]));
     assertThat(reply.getText().toString(), equalTo(incorrect));
     assertThat(option1.isEnabled(), equalTo(false));
@@ -329,5 +337,96 @@ public class QuizUnitTests {
     assertThat(option3.isEnabled(), equalTo(false));
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(true));
+  }
+
+
+  @Test
+  public void whenQuestion1Cheated_thenYes() {
+
+    //  GIVEN 
+    //  encontrándonos en pantalla Cheat sin haber respondido
+    //  a  pregunta del cuestionario en pantalla Question
+    //  mostraremos botones Yes y NO activados
+    cheat.performClick();
+    assertThat(warning.getText().toString(), equalTo(sure));
+    assertThat(answer.getText().toString(), equalTo(empty_answer));
+    assertThat(yes.isEnabled(), equalTo(true));
+    assertThat(no.isEnabled(), equalTo(true));
+
+    //  WHEN 
+    //  al pulsar botón Yes
+    yes.performClick();
+
+    //  THEN 
+    //  visualizaremos respuesta correcta a pregunta
+    //  del cuestionario mostrada actualmente en pantalla Question
+    //  mostraremos botones Yes y NO desactivados
+    assertThat(warning.getText().toString(), equalTo(sure));
+    assertThat(answer.getText().toString(), equalTo(quiz[3]));
+    assertThat(yes.isEnabled(), equalTo(false));
+    assertThat(no.isEnabled(), equalTo(false));
+  }
+
+
+  @Test
+  public void whenQuestion1IncorrectCheated_thenYes() {
+
+    //  GIVEN 
+    //  encontrándonos en pantalla Cheat después
+    //  de responder a pregunta del cuestionario
+    //  mostraremos mensaje Incorrect segun la respuesta del usuario
+    //  mostraremos botones Yes y NO activados
+    option2.performClick();
+    cheat.performClick();
+    assertThat(warning.getText().toString(), equalTo(sure));
+    assertThat(answer.getText().toString(), equalTo(empty_answer));
+    assertThat(yes.isEnabled(), equalTo(true));
+    assertThat(no.isEnabled(), equalTo(true));
+
+
+    //  WHEN 
+    //  al pulsar botón Yes
+    yes.performClick();
+
+    //  THEN 
+    //  visualizaremos respuesta correcta a pregunta
+    //  del cuestionario mostrada actualmente en pantalla Question
+    //  mostraremos botones Yes y NO desactivados
+    assertThat(warning.getText().toString(), equalTo(sure));
+    assertThat(answer.getText().toString(), equalTo(quiz[3]));
+    assertThat(yes.isEnabled(), equalTo(false));
+    assertThat(no.isEnabled(), equalTo(false));
+  }
+
+  @Test
+  public void whenQuestion1Cheated_thenYesAndBack() {
+
+    //  GIVEN 
+    //  encontrándonos en pantalla Cheat sin haber respondido
+    //  a  pregunta del cuestionario en pantalla Question
+    //  mostraremos botones Yes y NO activados
+    cheat.performClick();
+    assertThat(warning.getText().toString(), equalTo(sure));
+    assertThat(answer.getText().toString(), equalTo(empty_answer));
+    assertThat(yes.isEnabled(), equalTo(true));
+    assertThat(no.isEnabled(), equalTo(true));
+
+    //  WHEN 
+    //  al pulsar botón Yes y luego el botón Back
+    yes.performClick();
+    screen2.finish();
+
+    //  THEN 
+    //  volveremos a pantalla Question donde mostraremos
+    //  pregunta siguiente del cuestionario antes de iniciar pantalla Cheat
+    //  mostraremos botones Option y Cheat activados
+    //  mostraremos botón Next desactivado
+    assertThat(question.getText().toString(), equalTo(quiz[5]));
+    assertThat(reply.getText().toString(), equalTo(empty_reply));
+    assertThat(option1.isEnabled(), equalTo(true));
+    assertThat(option2.isEnabled(), equalTo(true));
+    assertThat(option3.isEnabled(), equalTo(true));
+    assertThat(cheat.isEnabled(), equalTo(true));
+    assertThat(next.isEnabled(), equalTo(false));
   }
 }
