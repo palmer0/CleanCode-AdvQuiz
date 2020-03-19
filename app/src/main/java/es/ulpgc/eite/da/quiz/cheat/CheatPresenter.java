@@ -120,4 +120,5 @@ public class CheatPresenter implements CheatContract.Presenter {
   public void injectRouter(CheatContract.Router router) {
     this.router = router;
   }
+
 }
