@@ -96,6 +96,7 @@ public class CheatPresenter implements CheatContract.Presenter {
     }
   }
 
+
   private void showAnswer() {
     state.answerCheated=true;
     state.answerEnabled=false;
