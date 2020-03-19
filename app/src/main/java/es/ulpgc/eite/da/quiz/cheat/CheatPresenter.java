@@ -105,6 +105,7 @@ public class CheatPresenter implements CheatContract.Presenter {
     view.get().displayAnswer(state);
   }
 
+
   @Override
   public void injectView(WeakReference<CheatContract.View> view) {
     this.view = view;
