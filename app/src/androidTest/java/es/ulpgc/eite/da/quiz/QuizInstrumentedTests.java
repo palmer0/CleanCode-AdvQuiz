@@ -1032,9 +1032,9 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.option2Button))).check(matches(withText(quiz[47])));
     (onView(withId(R.id.option3Button))).check(matches(withText(quiz[48])));
     (onView(withId(R.id.replyTextView))).check(matches(withText(empty_reply)));
-    (onView(withId(R.id.option1Button))).check(matches(isEnabled()));
-    (onView(withId(R.id.option2Button))).check(matches(isEnabled()));
-    (onView(withId(R.id.option3Button))).check(matches(isEnabled()));
+    (onView(withId(R.id.option1Button))).check(matches(not(isEnabled())));
+    (onView(withId(R.id.option2Button))).check(matches(not(isEnabled())));
+    (onView(withId(R.id.option3Button))).check(matches(not(isEnabled())));
     (onView(withId(R.id.cheatButton))).check(matches(isEnabled()));
     (onView(withId(R.id.nextButton))).check(matches(not(isEnabled())));
 

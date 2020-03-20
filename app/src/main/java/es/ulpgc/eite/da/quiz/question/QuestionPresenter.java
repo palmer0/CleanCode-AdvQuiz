@@ -80,6 +80,10 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
       if(!model.hasQuizFinished()) {
         onNextButtonClicked();
+
+      } else {
+        state.optionEnabled=false;
+        view.get().displayQuestion(state);
       }
 
     } else {

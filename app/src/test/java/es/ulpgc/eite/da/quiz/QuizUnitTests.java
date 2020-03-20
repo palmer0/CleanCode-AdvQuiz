@@ -271,7 +271,7 @@ public class QuizUnitTests {
     Button yes = activity2.findViewById(R.id.yesButton);
     Button no = activity2.findViewById(R.id.noButton);
     String sure =activity2.getResources().getString(R.string.warning_message);
-    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
+    String empty_answer=activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -311,7 +311,7 @@ public class QuizUnitTests {
     Button yes = activity2.findViewById(R.id.yesButton);
     Button no = activity2.findViewById(R.id.noButton);
     String sure =activity2.getResources().getString(R.string.warning_message);
-    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
+    String empty_answer=activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -334,7 +334,7 @@ public class QuizUnitTests {
     Button yes = activity2.findViewById(R.id.yesButton);
     Button no = activity2.findViewById(R.id.noButton);
     String sure =activity2.getResources().getString(R.string.warning_message);
-    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
+    String empty_answer=activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -376,7 +376,7 @@ public class QuizUnitTests {
     Button yes = activity2.findViewById(R.id.yesButton);
     Button no = activity2.findViewById(R.id.noButton);
     String sure =activity2.getResources().getString(R.string.warning_message);
-    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
+    String empty_answer=activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -415,7 +415,7 @@ public class QuizUnitTests {
     Button yes = activity2.findViewById(R.id.yesButton);
     Button no = activity2.findViewById(R.id.noButton);
     String sure =activity2.getResources().getString(R.string.warning_message);
-    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
+    String empty_answer=activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -452,7 +452,7 @@ public class QuizUnitTests {
     Button yes = activity2.findViewById(R.id.yesButton);
     Button no = activity2.findViewById(R.id.noButton);
     String sure =activity2.getResources().getString(R.string.warning_message);
-    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
+    String empty_answer=activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -487,7 +487,7 @@ public class QuizUnitTests {
     Button yes = activity2.findViewById(R.id.yesButton);
     Button no = activity2.findViewById(R.id.noButton);
     String sure =activity2.getResources().getString(R.string.warning_message);
-    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
+    String empty_answer=activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -496,9 +496,7 @@ public class QuizUnitTests {
     //  WHEN 
     //  al pulsar botón Yes y luego el botón Back
     yes.performClick();
-    //activity2.finish();
     activity2.onBackPressed();
-    //screen2.pause();
     screen1.resume();
 
     //  THEN 
@@ -515,5 +513,262 @@ public class QuizUnitTests {
     assertThat(next.isEnabled(), equalTo(false));
   }
 
+  @Test
+  public void whenQuestion1IncorrectCheated_thenYesAndBack() {
 
+    //  GIVEN 
+    //  encontrándonos en pantalla Cheat después
+    //  de responder a pregunta del cuestionario en pantalla Question
+    //  mostraremos mensaje Incorrect segun la respuesta del usuario
+    //  mostraremos botones Yes y NO activados
+    option2.performClick();
+    cheat.performClick();
+    CheatActivity activity2 = screen2.create().resume().get();
+    TextView warning = activity2.findViewById(R.id.warningTextView);
+    TextView answer = activity2.findViewById(R.id.answerTextView);
+    Button yes = activity2.findViewById(R.id.yesButton);
+    Button no = activity2.findViewById(R.id.noButton);
+    String sure =activity2.getResources().getString(R.string.warning_message);
+    String empty_answer=activity2.getResources().getString(R.string.empty_answer);
+    assertThat(warning.getText().toString(), equalTo(sure));
+    assertThat(answer.getText().toString(), equalTo(empty_answer));
+    assertThat(yes.isEnabled(), equalTo(true));
+    assertThat(no.isEnabled(), equalTo(true));
+
+    //  WHEN 
+    //  al pulsar botón Yes y luego el botón Back
+    yes.performClick();
+    activity2.onBackPressed();
+    screen1.resume();
+
+    //  THEN 
+    //  volveremos a pantalla Question donde mostraremos pregunta
+    //  siguiente del cuestionario antes de iniciar pantalla Cheat
+    //  mostraremos botones Option y Cheat activados
+    //  mostraremos botón Next desactivado
+    assertThat(question.getText().toString(), equalTo(quiz[5]));
+    assertThat(reply.getText().toString(), equalTo(empty_reply));
+    assertThat(option1.isEnabled(), equalTo(true));
+    assertThat(option2.isEnabled(), equalTo(true));
+    assertThat(option3.isEnabled(), equalTo(true));
+    assertThat(cheat.isEnabled(), equalTo(true));
+    assertThat(next.isEnabled(), equalTo(false));
+
+  }
+
+  @Test
+  public void whenQuestion10_thenCorrect() {
+
+    //  GIVEN 
+    //  encontrándonos en pantalla Question
+    //  después de cargar pregunta del cuestionario
+    //  mostraremos botones Option y Cheat activados
+    //  mostraremos botón Next desactivado
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    assertThat(question.getText().toString(), equalTo(quiz[45]));
+    assertThat(reply.getText().toString(), equalTo(empty_reply));
+    assertThat(option1.isEnabled(), equalTo(true));
+    assertThat(option2.isEnabled(), equalTo(true));
+    assertThat(option3.isEnabled(), equalTo(true));
+    assertThat(cheat.isEnabled(), equalTo(true));
+    assertThat(next.isEnabled(), equalTo(false));
+
+    //  WHEN 
+    //  al pulsar botón Option correcto
+    option1.performClick();
+
+    //  THEN 
+    //  mostraremos mensaje Correct segun la respuesta del usuario
+    //  mostraremos botones Option, Next y Cheat desactivados
+    assertThat(question.getText().toString(), equalTo(quiz[45]));
+    assertThat(reply.getText().toString(), equalTo(correct));
+    assertThat(option1.isEnabled(), equalTo(false));
+    assertThat(option2.isEnabled(), equalTo(false));
+    assertThat(option3.isEnabled(), equalTo(false));
+    assertThat(cheat.isEnabled(), equalTo(false));
+    assertThat(next.isEnabled(), equalTo(false));
+  }
+
+  @Test
+  public void whenQuestion10_thenIncorrect() {
+
+    //  GIVEN 
+    //  encontrándonos en pantalla Question
+    //  después de cargar pregunta del cuestionario
+    //  mostraremos botones Option y Cheat activados
+    //  mostraremos botón Next desactivado
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    assertThat(question.getText().toString(), equalTo(quiz[45]));
+    assertThat(reply.getText().toString(), equalTo(empty_reply));
+    assertThat(option1.isEnabled(), equalTo(true));
+    assertThat(option2.isEnabled(), equalTo(true));
+    assertThat(option3.isEnabled(), equalTo(true));
+    assertThat(cheat.isEnabled(), equalTo(true));
+    assertThat(next.isEnabled(), equalTo(false));
+
+    //  WHEN 
+    //  al pulsar botón Option incorrecto
+    option2.performClick();
+
+    //  THEN 
+    //  mostraremos mensaje Incorrect segun la respuesta del usuario
+    //  mostraremos botones Option y Next desactivados
+    //  mostraremos botón Cheat activado
+    assertThat(question.getText().toString(), equalTo(quiz[45]));
+    assertThat(reply.getText().toString(), equalTo(incorrect));
+    assertThat(option1.isEnabled(), equalTo(false));
+    assertThat(option2.isEnabled(), equalTo(false));
+    assertThat(option3.isEnabled(), equalTo(false));
+    assertThat(cheat.isEnabled(), equalTo(true));
+    assertThat(next.isEnabled(), equalTo(false));
+  }
+
+  @Test
+  public void whenQuestion10Cheated_thenYesAndBack() {
+
+    //  GIVEN 
+    //  encontrándonos en pantalla Cheat sin responder
+    //  a  pregunta del cuestionario en pantalla Question
+    //  mostraremos botones Yes y NO activados
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    cheat.performClick();
+    CheatActivity activity2 = screen2.create().resume().get();
+    TextView warning = activity2.findViewById(R.id.warningTextView);
+    TextView answer = activity2.findViewById(R.id.answerTextView);
+    Button yes = activity2.findViewById(R.id.yesButton);
+    Button no = activity2.findViewById(R.id.noButton);
+    String sure =activity2.getResources().getString(R.string.warning_message);
+    String empty_answer=activity2.getResources().getString(R.string.empty_answer);
+    assertThat(warning.getText().toString(), equalTo(sure));
+    assertThat(answer.getText().toString(), equalTo(empty_answer));
+    assertThat(yes.isEnabled(), equalTo(true));
+    assertThat(no.isEnabled(), equalTo(true));
+
+    //  WHEN 
+    //  al pulsar botones Yes y Back
+    yes.performClick();
+    activity2.onBackPressed();
+    screen1.resume();
+
+    //  THEN 
+    //  volveremos a pantalla Question donde mostraremos pregunta
+    //  del cuestionario existente antes de iniciar pantalla Cheat
+    //  mostraremos botón Cheat activado
+    //  mostraremos botones Option y Next desactivados
+    assertThat(question.getText().toString(), equalTo(quiz[45]));
+    assertThat(reply.getText().toString(), equalTo(empty_reply));
+    assertThat(option1.isEnabled(), equalTo(false));
+    assertThat(option2.isEnabled(), equalTo(false));
+    assertThat(option3.isEnabled(), equalTo(false));
+    assertThat(cheat.isEnabled(), equalTo(true));
+    assertThat(next.isEnabled(), equalTo(false));
+  }
+
+  @Test
+  public void whenQuestion10IncorrectCheated_thenYesAndBack() {
+
+    //  GIVEN 
+    //  encontrándonos en pantalla Cheat después de responder
+    //  a pregunta del cuestionario en pantalla Question
+    //  mostraremos mensaje Incorrect segun la respuesta del usuario
+    //  mostraremos botones Yes y NO activados
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    next.performClick();
+    option2.performClick();
+    cheat.performClick();
+    CheatActivity activity2 = screen2.create().resume().get();
+    TextView warning = activity2.findViewById(R.id.warningTextView);
+    TextView answer = activity2.findViewById(R.id.answerTextView);
+    Button yes = activity2.findViewById(R.id.yesButton);
+    Button no = activity2.findViewById(R.id.noButton);
+    String sure =activity2.getResources().getString(R.string.warning_message);
+    String empty_answer=activity2.getResources().getString(R.string.empty_answer);
+    assertThat(warning.getText().toString(), equalTo(sure));
+    assertThat(answer.getText().toString(), equalTo(empty_answer));
+    assertThat(yes.isEnabled(), equalTo(true));
+    assertThat(no.isEnabled(), equalTo(true));
+
+    //  WHEN 
+    //  al pulsar botones Yes y Back
+
+    //  THEN 
+    //  volveremos a pantalla Question donde mostraremos pregunta
+    //  del cuestionario existente antes de iniciar pantalla Cheat
+    //  mostraremos botón Cheat activado
+    //  mostraremos botones Next y Option desactivado
+    assertThat(question.getText().toString(), equalTo(quiz[45]));
+    assertThat(reply.getText().toString(), equalTo(incorrect));
+    assertThat(option1.isEnabled(), equalTo(false));
+    assertThat(option2.isEnabled(), equalTo(false));
+    assertThat(option3.isEnabled(), equalTo(false));
+    assertThat(cheat.isEnabled(), equalTo(true));
+    assertThat(next.isEnabled(), equalTo(false));
+  }
 }
