@@ -8,9 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
+import org.robolectric.android.controller.ActivityController;
 
-import es.ulpgc.eite.da.quiz.app.AppMediator;
 import es.ulpgc.eite.da.quiz.cheat.CheatActivity;
 import es.ulpgc.eite.da.quiz.question.QuestionActivity;
 
@@ -19,45 +18,85 @@ import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(RobolectricTestRunner.class)
 //@Config( manifest = "../main/AndroidManifest.xml")
-@Config(application = AppMediator.class)
+//@Config(application = AppMediator.class)
 public class QuizUnitTests {
 
-  QuestionActivity screen1;
-  CheatActivity screen2;
+  //QuestionActivity screen1;
+  ActivityController<QuestionActivity> screen1;
+  ActivityController<CheatActivity> screen2;
 
-  TextView question, reply, warning, answer;
-  Button option1, option2, option3, next, cheat, yes, no;
+  TextView question, reply;
+  Button option1, option2, option3, next, cheat;
+  //TextView question, reply, warning, answer;
+  //Button option1, option2, option3, next, cheat, yes, no;
 
   String[] quiz;
-  String empty_reply, empty_answer, correct, incorrect, sure;
+  String empty_reply, correct, incorrect;
+  //String empty_reply, empty_answer, correct, incorrect, sure;
 
   @Before
   public void setup(){
 
-    screen1=Robolectric.setupActivity(QuestionActivity.class);
-    screen2=Robolectric.setupActivity(CheatActivity.class);
+    //QuestionActivity screen1=Robolectric.setupActivity(QuestionActivity.class);
+    //CheatActivity activity2=Robolectric.setupActivity(CheatActivity.class);
 
-    quiz = screen1.getResources().getStringArray(R.array.quiz_array);
+    /*
+    QuestionActivity screen1 = Robolectric
+        .buildActivity(QuestionActivity.class)
+        .create()
+        .resume()
+        .get();
+    */
 
-    empty_reply =screen1.getResources().getString(R.string.empty_reply);
-    correct=screen1.getResources().getString(R.string.correct_reply);
-    incorrect=screen1.getResources().getString(R.string.incorrect_reply);
+    screen1 = Robolectric.buildActivity(QuestionActivity.class);
+    screen2 = Robolectric.buildActivity(CheatActivity.class);
 
-    sure =screen2.getResources().getString(R.string.warning_message);
-    empty_answer =screen2.getResources().getString(R.string.empty_answer);
+    /*
+    CheatActivity activity2 = Robolectric
+        .buildActivity(CheatActivity.class)
+        .create()
+        .resume()
+        .get();
+    */
 
-    question = screen1.findViewById(R.id.questionTextView);
-    reply = screen1.findViewById(R.id.replyTextView);
-    option1 = screen1.findViewById(R.id.option1Button);
-    option2 = screen1.findViewById(R.id.option2Button);
-    option3 = screen1.findViewById(R.id.option3Button);
-    next = screen1.findViewById(R.id.nextButton);
-    cheat = screen1.findViewById(R.id.cheatButton);
+    /*
+    screen1 = Robolectric
+        .buildActivity(QuestionActivity.class)
+        .create()
+        .resume()
+        .get();
+    */
 
-    warning = screen2.findViewById(R.id.warningTextView);
-    answer = screen2.findViewById(R.id.answerTextView);
-    yes = screen2.findViewById(R.id.yesButton);
-    no = screen2.findViewById(R.id.noButton);
+    /*
+    QuestionActivity activity1 = screen1
+        .create()
+        .resume()
+        .get();
+    */
+
+    QuestionActivity activity1 = screen1.create().resume().get();
+
+    quiz = activity1.getResources().getStringArray(R.array.quiz_array);
+
+    empty_reply =activity1.getResources().getString(R.string.empty_reply);
+    correct=activity1.getResources().getString(R.string.correct_reply);
+    incorrect=activity1.getResources().getString(R.string.incorrect_reply);
+
+    //sure =activity2.getResources().getString(R.string.warning_message);
+    //empty_answer =activity2.getResources().getString(R.string.empty_answer);
+
+    question = activity1.findViewById(R.id.questionTextView);
+    reply = activity1.findViewById(R.id.replyTextView);
+    option1 = activity1.findViewById(R.id.option1Button);
+    option2 = activity1.findViewById(R.id.option2Button);
+    option3 = activity1.findViewById(R.id.option3Button);
+    next = activity1.findViewById(R.id.nextButton);
+    cheat = activity1.findViewById(R.id.cheatButton);
+
+//    warning = activity2.findViewById(R.id.warningTextView);
+//    answer = activity2.findViewById(R.id.answerTextView);
+//    yes = activity2.findViewById(R.id.yesButton);
+//    no = activity2.findViewById(R.id.noButton);
   }
 
 
@@ -226,15 +265,15 @@ public class QuizUnitTests {
     //  visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //  antes de mostrar respuesta correcta
     //  mostraremos botones Yes y NO activados
-    CheatActivity screen=Robolectric.setupActivity(CheatActivity.class);
-    TextView warning = screen.findViewById(R.id.warningTextView);
-    TextView answer = screen.findViewById(R.id.answerTextView);
-    Button yes = screen.findViewById(R.id.yesButton);
-    Button no = screen.findViewById(R.id.noButton);
-    String sure =screen.getResources().getString(R.string.warning_message);
-    String empty =screen.getResources().getString(R.string.empty_answer);
+    CheatActivity activity2 = screen2.create().resume().get();
+    TextView warning = activity2.findViewById(R.id.warningTextView);
+    TextView answer = activity2.findViewById(R.id.answerTextView);
+    Button yes = activity2.findViewById(R.id.yesButton);
+    Button no = activity2.findViewById(R.id.noButton);
+    String sure =activity2.getResources().getString(R.string.warning_message);
+    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
-    assertThat(answer.getText().toString(), equalTo(empty));
+    assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
   }
@@ -266,11 +305,19 @@ public class QuizUnitTests {
     //  visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //  antes de mostrar respuesta correcta
     //  mostraremos botones Yes y NO activados
+    CheatActivity activity2 = screen2.create().resume().get();
+    TextView warning = activity2.findViewById(R.id.warningTextView);
+    TextView answer = activity2.findViewById(R.id.answerTextView);
+    Button yes = activity2.findViewById(R.id.yesButton);
+    Button no = activity2.findViewById(R.id.noButton);
+    String sure =activity2.getResources().getString(R.string.warning_message);
+    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
   }
+
 
 
   @Test
@@ -281,6 +328,13 @@ public class QuizUnitTests {
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
     cheat.performClick();
+    CheatActivity activity2 = screen2.create().resume().get();
+    TextView warning = activity2.findViewById(R.id.warningTextView);
+    TextView answer = activity2.findViewById(R.id.answerTextView);
+    Button yes = activity2.findViewById(R.id.yesButton);
+    Button no = activity2.findViewById(R.id.noButton);
+    String sure =activity2.getResources().getString(R.string.warning_message);
+    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -316,6 +370,13 @@ public class QuizUnitTests {
     //  mostraremos botones Yes y NO activados
     option2.performClick();
     cheat.performClick();
+    CheatActivity activity2 = screen2.create().resume().get();
+    TextView warning = activity2.findViewById(R.id.warningTextView);
+    TextView answer = activity2.findViewById(R.id.answerTextView);
+    Button yes = activity2.findViewById(R.id.yesButton);
+    Button no = activity2.findViewById(R.id.noButton);
+    String sure =activity2.getResources().getString(R.string.warning_message);
+    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -348,6 +409,13 @@ public class QuizUnitTests {
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
     cheat.performClick();
+    CheatActivity activity2 = screen2.create().resume().get();
+    TextView warning = activity2.findViewById(R.id.warningTextView);
+    TextView answer = activity2.findViewById(R.id.answerTextView);
+    Button yes = activity2.findViewById(R.id.yesButton);
+    Button no = activity2.findViewById(R.id.noButton);
+    String sure =activity2.getResources().getString(R.string.warning_message);
+    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -378,6 +446,13 @@ public class QuizUnitTests {
     //  mostraremos botones Yes y NO activados
     option2.performClick();
     cheat.performClick();
+    CheatActivity activity2 = screen2.create().resume().get();
+    TextView warning = activity2.findViewById(R.id.warningTextView);
+    TextView answer = activity2.findViewById(R.id.answerTextView);
+    Button yes = activity2.findViewById(R.id.yesButton);
+    Button no = activity2.findViewById(R.id.noButton);
+    String sure =activity2.getResources().getString(R.string.warning_message);
+    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -406,6 +481,13 @@ public class QuizUnitTests {
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
     cheat.performClick();
+    CheatActivity activity2 = screen2.create().resume().get();
+    TextView warning = activity2.findViewById(R.id.warningTextView);
+    TextView answer = activity2.findViewById(R.id.answerTextView);
+    Button yes = activity2.findViewById(R.id.yesButton);
+    Button no = activity2.findViewById(R.id.noButton);
+    String sure =activity2.getResources().getString(R.string.warning_message);
+    String empty_answer =activity2.getResources().getString(R.string.empty_answer);
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
     assertThat(yes.isEnabled(), equalTo(true));
@@ -414,7 +496,10 @@ public class QuizUnitTests {
     //  WHEN 
     //  al pulsar botón Yes y luego el botón Back
     yes.performClick();
-    screen2.finish();
+    //activity2.finish();
+    activity2.onBackPressed();
+    //screen2.pause();
+    screen1.resume();
 
     //  THEN 
     //  volveremos a pantalla Question donde mostraremos
@@ -429,4 +514,6 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
   }
+
+
 }

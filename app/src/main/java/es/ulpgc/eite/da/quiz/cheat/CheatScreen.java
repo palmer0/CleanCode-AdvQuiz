@@ -14,9 +14,11 @@ public class CheatScreen {
         new WeakReference<>((FragmentActivity) view);
 
     AppMediator mediator = (AppMediator) context.get().getApplication();
+    //AppMediator mediator = AppMediator.getInstance();
     CheatState state = mediator.getCheatState();
 
     CheatContract.Router router = new CheatRouter(mediator);
+    //CheatContract.Router router = new CheatRouter(context);
     CheatContract.Presenter presenter = new CheatPresenter(state);
     CheatContract.Model model = new CheatModel();
     presenter.injectModel(model);

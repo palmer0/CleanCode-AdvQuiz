@@ -7,11 +7,29 @@ import es.ulpgc.eite.da.quiz.question.QuestionState;
 
 public class AppMediator extends Application {
 
+
   private QuestionState questionState;
   private CheatState cheatState;
 
   private QuestionToCheatState questionToCheatState;
   private CheatToQuestionState cheatToQuestionState;
+
+  /*
+  private static AppMediator INSTANCE;
+
+  private AppMediator() {
+    questionState = new QuestionState();
+    cheatState = new CheatState();
+  }
+
+  public static AppMediator getInstance() {
+    if(INSTANCE == null) {
+      INSTANCE = new AppMediator();
+    }
+
+    return INSTANCE;
+  }
+  */
 
   @Override
   public void onCreate() {

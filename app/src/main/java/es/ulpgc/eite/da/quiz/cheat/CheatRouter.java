@@ -8,11 +8,18 @@ public class CheatRouter implements CheatContract.Router {
 
   public static String TAG = CheatRouter.class.getSimpleName();
 
+  //private WeakReference<FragmentActivity> context;
   private AppMediator mediator;
 
   public CheatRouter(AppMediator mediator) {
     this.mediator = mediator;
   }
+
+  /*
+  public CheatRouter(WeakReference<FragmentActivity> context) {
+    this.context=context;
+  }
+  */
 
   @Override
   public void passStateToQuestionScreen(CheatToQuestionState state) {

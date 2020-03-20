@@ -49,7 +49,7 @@ public class CheatActivity
 
   @Override
   public void onBackPressed() {
-    super.onBackPressed();
+    //super.onBackPressed();
 
     presenter.onBackPressed();
   }

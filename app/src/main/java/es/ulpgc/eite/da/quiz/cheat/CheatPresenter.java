@@ -78,6 +78,8 @@ public class CheatPresenter implements CheatContract.Presenter {
     CheatToQuestionState passedState=new CheatToQuestionState();
     passedState.answerCheated=state.answerCheated;
     router.passStateToQuestionScreen(passedState);
+
+    view.get().onFinish();
   }
 
   @Override
@@ -92,7 +94,7 @@ public class CheatPresenter implements CheatContract.Presenter {
 
     } else {
       onBackPressed();
-      view.get().onFinish();
+      //view.get().onFinish();
     }
   }
 

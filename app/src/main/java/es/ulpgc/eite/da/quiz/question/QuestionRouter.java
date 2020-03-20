@@ -12,11 +12,18 @@ public class QuestionRouter implements QuestionContract.Router {
 
   public static String TAG = QuestionRouter.class.getSimpleName();
 
+  //private WeakReference<FragmentActivity> context;
   private AppMediator mediator;
 
   public QuestionRouter(AppMediator mediator) {
     this.mediator = mediator;
   }
+
+  /*
+  public QuestionRouter(WeakReference<FragmentActivity> context) {
+    this.context=context;
+  }
+  */
 
   @Override
   public void navigateToCheatScreen() {
