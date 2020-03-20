@@ -17,62 +17,22 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(RobolectricTestRunner.class)
-//@Config( manifest = "../main/AndroidManifest.xml")
-//@Config(application = AppMediator.class)
 public class QuizUnitTests {
 
-  //QuestionActivity screen1;
   ActivityController<QuestionActivity> screen1;
   ActivityController<CheatActivity> screen2;
 
   TextView question, reply;
   Button option1, option2, option3, next, cheat;
-  //TextView question, reply, warning, answer;
-  //Button option1, option2, option3, next, cheat, yes, no;
 
   String[] quiz;
   String empty_reply, correct, incorrect;
-  //String empty_reply, empty_answer, correct, incorrect, sure;
 
   @Before
   public void setup(){
 
-    //QuestionActivity screen1=Robolectric.setupActivity(QuestionActivity.class);
-    //CheatActivity activity2=Robolectric.setupActivity(CheatActivity.class);
-
-    /*
-    QuestionActivity screen1 = Robolectric
-        .buildActivity(QuestionActivity.class)
-        .create()
-        .resume()
-        .get();
-    */
-
     screen1 = Robolectric.buildActivity(QuestionActivity.class);
     screen2 = Robolectric.buildActivity(CheatActivity.class);
-
-    /*
-    CheatActivity activity2 = Robolectric
-        .buildActivity(CheatActivity.class)
-        .create()
-        .resume()
-        .get();
-    */
-
-    /*
-    screen1 = Robolectric
-        .buildActivity(QuestionActivity.class)
-        .create()
-        .resume()
-        .get();
-    */
-
-    /*
-    QuestionActivity activity1 = screen1
-        .create()
-        .resume()
-        .get();
-    */
 
     QuestionActivity activity1 = screen1.create().resume().get();
 
@@ -82,9 +42,6 @@ public class QuizUnitTests {
     correct=activity1.getResources().getString(R.string.correct_reply);
     incorrect=activity1.getResources().getString(R.string.incorrect_reply);
 
-    //sure =activity2.getResources().getString(R.string.warning_message);
-    //empty_answer =activity2.getResources().getString(R.string.empty_answer);
-
     question = activity1.findViewById(R.id.questionTextView);
     reply = activity1.findViewById(R.id.replyTextView);
     option1 = activity1.findViewById(R.id.option1Button);
@@ -93,10 +50,6 @@ public class QuizUnitTests {
     next = activity1.findViewById(R.id.nextButton);
     cheat = activity1.findViewById(R.id.cheatButton);
 
-//    warning = activity2.findViewById(R.id.warningTextView);
-//    answer = activity2.findViewById(R.id.answerTextView);
-//    yes = activity2.findViewById(R.id.yesButton);
-//    no = activity2.findViewById(R.id.noButton);
   }
 
 
