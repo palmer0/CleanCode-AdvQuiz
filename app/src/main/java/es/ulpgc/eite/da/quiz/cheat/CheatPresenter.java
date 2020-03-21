@@ -40,20 +40,6 @@ public class CheatPresenter implements CheatContract.Presenter {
 
     //TODO: falta implementacion
 
-    /*
-    if(state.answerCheated) {
-      onWarningButtonClicked(1);
-    }
-    */
-
-    /*
-    // update the state
-    state.answer = model.getAnswer();
-    */
-
-    Log.e(TAG, "state.answer: "+state.answer);
-    Log.e(TAG, "model.answer: "+model.getAnswer());
-
   }
 
   @Override
@@ -78,11 +64,6 @@ public class CheatPresenter implements CheatContract.Presenter {
       }
 
     }
-
-    /*
-    // update the state
-    state.answer = model.getAnswer();
-    */
 
     // update the view
     view.get().displayAnswer(state);
