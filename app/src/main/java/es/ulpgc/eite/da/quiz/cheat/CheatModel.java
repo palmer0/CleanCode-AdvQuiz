@@ -19,4 +19,5 @@ public class CheatModel implements CheatContract.Model {
   public void setAnswer(String answer) {
     this.answer=answer;
   }
+
 }

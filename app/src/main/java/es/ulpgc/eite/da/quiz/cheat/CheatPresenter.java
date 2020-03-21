@@ -39,6 +39,21 @@ public class CheatPresenter implements CheatContract.Presenter {
     Log.e(TAG, "onRestart()");
 
     //TODO: falta implementacion
+
+    /*
+    if(state.answerCheated) {
+      onWarningButtonClicked(1);
+    }
+    */
+
+    /*
+    // update the state
+    state.answer = model.getAnswer();
+    */
+
+    Log.e(TAG, "state.answer: "+state.answer);
+    Log.e(TAG, "model.answer: "+model.getAnswer());
+
   }
 
   @Override
@@ -51,9 +66,23 @@ public class CheatPresenter implements CheatContract.Presenter {
     QuestionToCheatState savedState = router.getStateFromQuestionScreen();
     if (savedState != null) {
 
+      Log.e(TAG, "savedState.answer: "+savedState.answer);
+
       // fetch the model
       model.setAnswer(savedState.answer);
+
+
+      // update the state
+      if(state.answerCheated) {
+        state.answer = model.getAnswer();
+      }
+
     }
+
+    /*
+    // update the state
+    state.answer = model.getAnswer();
+    */
 
     // update the view
     view.get().displayAnswer(state);

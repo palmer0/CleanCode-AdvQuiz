@@ -59,7 +59,7 @@ public class AppMediator extends Application {
 
   public QuestionToCheatState getQuestionToCheatState() {
     QuestionToCheatState state = questionToCheatState;
-    questionToCheatState = null; // reset state after getting it
+    //questionToCheatState = null; // reset state after getting it
     return state;
   }
 
