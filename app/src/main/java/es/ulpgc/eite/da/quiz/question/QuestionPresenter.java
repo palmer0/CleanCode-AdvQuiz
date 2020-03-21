@@ -49,10 +49,14 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     // update the model
     model.setQuizIndex(state.quizIndex);
+    Log.e(TAG, "index: "+ state.quizIndex);
 
     // update the view
     if(state.optionClicked){
+      Log.e(TAG, "option: "+ state.option);
+      Log.e(TAG, "correct: "+ model.isCorrectOption(state.option));
       view.get().updateReply(model.isCorrectOption(state.option));
+      //onOptionButtonClicked(state.option);
 
     } else {
       view.get().resetReply();
@@ -84,6 +88,9 @@ public class QuestionPresenter implements QuestionContract.Presenter {
       } else {
         state.optionEnabled=false;
         view.get().displayQuestion(state);
+
+        //boolean isCorrect = model.isCorrectOption(state.option);
+        //view.get().updateReply(isCorrect);
       }
 
     } else {
@@ -124,7 +131,11 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     //TODO: falta implementacion
 
+    //state.optionClicked=false;
+    //state.option=0;
+
     model.updateQuizIndex();
+    state.quizIndex=model.getQuizIndex();
     onStart();
     onResume();
   }

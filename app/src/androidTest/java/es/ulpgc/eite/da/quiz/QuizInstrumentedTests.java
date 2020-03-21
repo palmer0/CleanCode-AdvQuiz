@@ -184,6 +184,7 @@ public class QuizInstrumentedTests {
   }
 
 
+
   @Test
   public void question1CorrectWithRotation() {
     
@@ -274,6 +275,7 @@ public class QuizInstrumentedTests {
     (onView(withId(R.id.nextButton))).check(matches(isEnabled()));
 
   }
+
 
   @Test
   public void question1CorrectWithNextClicked() {
