@@ -33,7 +33,7 @@ public class QuizUnitTests {
   String empty_answer, sure;
 
   @Before
-  public void setUp(){
+  public void setup(){
 
     controller1 = Robolectric.buildActivity(QuestionActivity.class);
     controller2 = Robolectric.buildActivity(CheatActivity.class);
@@ -1520,6 +1520,10 @@ public class QuizUnitTests {
 
     //  WHEN 
     //  al pulsar botones Yes y Back
+    yes.performClick();
+    CheatActivity activity2 = controller2.get();
+    activity2.onBackPressed();
+    controller1.resume();
 
     //  THEN 
     //  volveremos a pantalla Question donde mostraremos pregunta
@@ -1534,4 +1538,6 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
   }
+
+
 }
