@@ -41,38 +41,11 @@ public class QuizUnitTests {
     controller1.create().resume().get();
     resources1();
 
-    /*
-    QuestionActivity activity1 = controller1.create().resume().get();
-
-    quiz = activity1.getResources().getStringArray(R.array.quiz_array);
-
-    empty_reply =activity1.getResources().getString(R.string.empty_reply);
-    correct=activity1.getResources().getString(R.string.correct_reply);
-    incorrect=activity1.getResources().getString(R.string.incorrect_reply);
-
-    question = activity1.findViewById(R.id.questionTextView);
-    reply = activity1.findViewById(R.id.replyTextView);
-    option1 = activity1.findViewById(R.id.option1Button);
-    option2 = activity1.findViewById(R.id.option2Button);
-    option3 = activity1.findViewById(R.id.option3Button);
-    next = activity1.findViewById(R.id.nextButton);
-    cheat = activity1.findViewById(R.id.cheatButton);
-    */
-
   }
 
-  /*
-  @After
-  public void tearDown() {
-    controller1.pause().stop().destroy();
-    controller2.pause().stop().destroy();
-
-  }
-  */
 
   private void resources1() {
 
-    //QuestionActivity activity1 = controller1.create().resume().get();
     QuestionActivity activity1 = controller1.get();
 
     quiz = activity1.getResources().getStringArray(R.array.quiz_array);
@@ -93,7 +66,6 @@ public class QuizUnitTests {
 
   private void resources2() {
 
-    //CheatActivity activity2 = controller2.create().resume().get();
     CheatActivity activity2 = controller2.get();
 
     sure =activity2.getResources().getString(R.string.warning_message);
@@ -124,26 +96,6 @@ public class QuizUnitTests {
         .resume()
         .visible();
 
-
-    /*
-    QuestionActivity activity1 = controller1.get();
-
-
-    quiz = activity1.getResources().getStringArray(R.array.quiz_array);
-
-    empty_reply =activity1.getResources().getString(R.string.empty_reply);
-    correct=activity1.getResources().getString(R.string.correct_reply);
-    incorrect=activity1.getResources().getString(R.string.incorrect_reply);
-
-    question = activity1.findViewById(R.id.questionTextView);
-    reply = activity1.findViewById(R.id.replyTextView);
-    option1 = activity1.findViewById(R.id.option1Button);
-    option2 = activity1.findViewById(R.id.option2Button);
-    option3 = activity1.findViewById(R.id.option3Button);
-    next = activity1.findViewById(R.id.nextButton);
-    cheat = activity1.findViewById(R.id.cheatButton);
-    */
-
   }
 
   private void rotate2() {
@@ -163,7 +115,6 @@ public class QuizUnitTests {
         .resume()
         .visible();
 
-    //CheatActivity activity2 = controller2.get();
   }
 
   @Test
