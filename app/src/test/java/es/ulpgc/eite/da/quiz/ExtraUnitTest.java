@@ -33,17 +33,17 @@ public class ExtraUnitTest {
   String empty_answer, sure;
 
   @Before
-  public void setup(){
+  public void setUp(){
 
     controller1 = Robolectric.buildActivity(QuestionActivity.class);
     controller2 = Robolectric.buildActivity(CheatActivity.class);
 
-    controller1.create().resume().get();
-    resources1();
+    controller1.create().resume().visible().get();
+    updateResources1();
 
   }
 
-  private void resources1() {
+  private void updateResources1() {
 
     QuestionActivity activity1 = controller1.get();
 
@@ -63,7 +63,7 @@ public class ExtraUnitTest {
   }
 
 
-  private void resources2() {
+  private void updateResources2() {
 
     CheatActivity activity2 = controller2.get();
 
@@ -90,7 +90,7 @@ public class ExtraUnitTest {
 
     controller1 = Robolectric.buildActivity(QuestionActivity.class)
         .create(bundle)
-        .start()
+        //.start()
         .restoreInstanceState(bundle)
         .resume()
         .visible();
@@ -109,7 +109,7 @@ public class ExtraUnitTest {
 
     controller2 = Robolectric.buildActivity(CheatActivity.class)
         .create(bundle)
-        .start()
+        //.start()
         .restoreInstanceState(bundle)
         .resume()
         .visible();
@@ -123,8 +123,8 @@ public class ExtraUnitTest {
     // GIVEN
 
     cheat.performClick();
-    controller2.create().resume().get();
-    resources2();
+    controller2.create().resume().visible().visible().get();
+    updateResources2();
     yes.performClick();
 
 
@@ -143,7 +143,7 @@ public class ExtraUnitTest {
 
     // THEN
 
-    resources1();
+    updateResources1();
     assertThat(
         question.getText().toString(),
         equalTo("¿Qué país es el segundo más grande del mundo?")
@@ -156,9 +156,9 @@ public class ExtraUnitTest {
     cheat.performClick();
     controller2.pause().stop().destroy();
     controller2 = Robolectric.buildActivity(CheatActivity.class);
-    controller2.create().resume();
+    controller2.create().resume().visible();
 
-    resources2();
+    updateResources2();
     yes.performClick();
 
     // THEN
@@ -176,7 +176,7 @@ public class ExtraUnitTest {
 
     // THEN
 
-    resources1();
+    updateResources1();
     assertThat(
         question.getText().toString(),
         equalTo("¿Cómo se llama la tercera isla más grande del mundo?")
@@ -189,11 +189,11 @@ public class ExtraUnitTest {
     cheat.performClick();
     controller2.pause().stop().destroy();
     controller2 = Robolectric.buildActivity(CheatActivity.class);
-    controller2.create().resume();
+    controller2.create().resume().visible();
 
     // THEN
 
-    resources2();
+    updateResources2();
     assertThat(
         answer.getText().toString(),
         equalTo("???")
@@ -210,13 +210,13 @@ public class ExtraUnitTest {
 
     // WHEN
 
-    resources2();
+    updateResources2();
     yes.performClick();
 
 
     // THEN
 
-    resources2();
+    updateResources2();
     assertThat(answer.getText().toString(), equalTo("Borneo"));
 
 
@@ -228,7 +228,7 @@ public class ExtraUnitTest {
 
     // THEN
 
-    resources2();
+    updateResources2();
     assertThat(answer.getText().toString(), equalTo("Borneo"));
 
 
@@ -241,7 +241,7 @@ public class ExtraUnitTest {
 
     // THEN
 
-    resources1();
+    updateResources1();
     assertThat(
         question.getText().toString(),
         equalTo("¿Qué porcentaje de la superficie de la Tierra no es agua?")
