@@ -38,7 +38,7 @@ public class QuizUnitTests {
     controller1 = Robolectric.buildActivity(QuestionActivity.class);
     controller2 = Robolectric.buildActivity(CheatActivity.class);
 
-    controller1.create().resume().visible().get();
+    controller1.create().resume().visible();
     updateResources1();
 
   }
@@ -357,7 +357,7 @@ public class QuizUnitTests {
     //  WHEN 
     //  al pulsar botón Cheat
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
 
     //  THEN 
     //  visualizaremos pantalla Cheat donde se nos pedirá confirmación
@@ -391,7 +391,7 @@ public class QuizUnitTests {
     //  WHEN 
     //  al pulsar botón Cheat y girar la pantalla
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     rotate1();
     rotate2();
 
@@ -428,7 +428,7 @@ public class QuizUnitTests {
     //  WHEN 
     //  al pulsar botón Cheat
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
 
     //  THEN 
     //  visualizaremos pantalla Cheat donde se nos pedirá confirmación
@@ -451,7 +451,7 @@ public class QuizUnitTests {
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -487,7 +487,7 @@ public class QuizUnitTests {
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -526,7 +526,7 @@ public class QuizUnitTests {
     //  mostraremos botones Yes y NO activados
     option2.performClick();
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -563,7 +563,7 @@ public class QuizUnitTests {
     //  mostraremos botones Yes y NO activados
     option2.performClick();
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -600,7 +600,7 @@ public class QuizUnitTests {
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -632,7 +632,7 @@ public class QuizUnitTests {
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -668,7 +668,7 @@ public class QuizUnitTests {
     //  mostraremos botones Yes y NO activados
     option2.performClick();
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -702,7 +702,7 @@ public class QuizUnitTests {
     //  mostraremos botones Yes y NO activados
     option2.performClick();
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -736,7 +736,7 @@ public class QuizUnitTests {
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -775,7 +775,7 @@ public class QuizUnitTests {
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -815,7 +815,7 @@ public class QuizUnitTests {
     //  mostraremos botones Yes y NO activados
     option2.performClick();
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -1194,7 +1194,7 @@ public class QuizUnitTests {
     option2.performClick();
     next.performClick();
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -1249,7 +1249,7 @@ public class QuizUnitTests {
     option2.performClick();
     next.performClick();
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));
@@ -1307,7 +1307,7 @@ public class QuizUnitTests {
     next.performClick();
     option2.performClick();
     cheat.performClick();
-    controller2.create().resume().visible().get();
+    controller2.create().resume().visible();
     updateResources2();
     assertThat(warning.getText().toString(), equalTo(sure));
     assertThat(answer.getText().toString(), equalTo(empty_answer));

@@ -90,7 +90,6 @@ public class ExtraUnitTest {
 
     controller1 = Robolectric.buildActivity(QuestionActivity.class)
         .create(bundle)
-        //.start()
         .restoreInstanceState(bundle)
         .resume()
         .visible();
@@ -109,7 +108,6 @@ public class ExtraUnitTest {
 
     controller2 = Robolectric.buildActivity(CheatActivity.class)
         .create(bundle)
-        //.start()
         .restoreInstanceState(bundle)
         .resume()
         .visible();
