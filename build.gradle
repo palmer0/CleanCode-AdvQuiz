@@ -2,9 +2,9 @@
 
 buildscript {
     repositories {
-        google()
         jcenter()
-        
+        google()
+        //mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'
@@ -18,10 +18,34 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        //mavenCentral()
     }
 }
+
+
+
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+/*
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+task cucumber() {
+    // dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+        }
+    }
+}
+
+*/
