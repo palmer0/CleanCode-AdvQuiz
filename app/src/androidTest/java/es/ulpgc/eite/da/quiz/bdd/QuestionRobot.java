@@ -1,5 +1,7 @@
 package es.ulpgc.eite.da.quiz.bdd;
 
+import android.content.Context;
+
 import androidx.test.rule.ActivityTestRule;
 
 import es.ulpgc.eite.da.quiz.R;
@@ -26,15 +28,14 @@ public class QuestionRobot {
 
     public void mostrarPantallaQuestion() {
         testRule.launchActivity(null);
+        Context ctx = testRule.getActivity();
 
-        QuestionActivity act = testRule.getActivity();
-
-        quiz = act.getResources().getStringArray(R.array.quiz_array);
-        correct = act.getString(R.string.correct_reply);
-        incorrect = act.getString(R.string.incorrect_reply);
-        empty = act.getString(R.string.empty_reply);
-        next = act.getString(R.string.next_button);
-        cheat = act.getString(R.string.cheat_button);
+        quiz = ctx.getResources().getStringArray(R.array.quiz_array);
+        correct = ctx.getString(R.string.correct_reply);
+        incorrect = ctx.getString(R.string.incorrect_reply);
+        empty = ctx.getString(R.string.empty_reply);
+        next = ctx.getString(R.string.next_button);
+        cheat = ctx.getString(R.string.cheat_button);
 
     }
 
