@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
 @LargeTest
 public class ResponderAQuestion1Tests {
 
-
     public QuestionRobot robot = new QuestionRobot();
+
 
     @Test
     public void testResponderCorrectAQuestion1() {
