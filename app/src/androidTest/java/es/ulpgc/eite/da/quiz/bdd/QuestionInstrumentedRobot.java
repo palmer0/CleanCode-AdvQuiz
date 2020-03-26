@@ -16,7 +16,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.not;
 
-public class QuestionRobot {
+public class QuestionInstrumentedRobot {
 
 
     private ActivityTestRule<QuestionActivity> testRule = new ActivityTestRule<>(

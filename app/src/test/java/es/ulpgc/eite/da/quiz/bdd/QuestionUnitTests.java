@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class ResponderAQuestion1Tests {
+public class QuestionUnitTests {
 
-    public QuestionRobot robot = new QuestionRobot();
+    public QuestionUnitRobot robot = new QuestionUnitRobot();
 
 
     @Test

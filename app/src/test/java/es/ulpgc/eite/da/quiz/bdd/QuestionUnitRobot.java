@@ -13,7 +13,7 @@ import es.ulpgc.eite.da.quiz.question.QuestionActivity;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class QuestionRobot {
+public class QuestionUnitRobot {
 
     private ActivityController<QuestionActivity> testController;
 
