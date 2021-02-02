@@ -1,5 +1,6 @@
 package es.ulpgc.eite.da.quiz.question;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -7,6 +8,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import es.ulpgc.eite.da.quiz.R;
+import es.ulpgc.eite.da.quiz.app.AppMediator;
+import es.ulpgc.eite.da.quiz.cheat.CheatActivity;
 
 public class QuestionActivity
     extends AppCompatActivity implements QuestionContract.View {
@@ -24,6 +27,10 @@ public class QuestionActivity
 
     ((TextView) findViewById(R.id.nextButton)).setText(R.string.next_button);
     ((TextView) findViewById(R.id.cheatButton)).setText(R.string.cheat_button);
+
+    if(savedInstanceState == null) {
+      AppMediator.resetInstance();
+    }
 
     // do the setup
     QuestionScreen.configure(this);
@@ -49,6 +56,16 @@ public class QuestionActivity
     super.onDestroy();
 
     presenter.onDestroy();
+  }
+
+  @Override
+  public void navigateToCheatScreen() {
+
+    //TODO: falta implementacion
+
+    Intent intent = new Intent(this, CheatActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    startActivity(intent);
   }
 
   @Override

@@ -10,6 +10,8 @@ public interface QuestionContract {
   interface View {
     void injectPresenter(Presenter presenter);
 
+    void navigateToCheatScreen();
+
     void displayQuestion(QuestionViewModel viewModel);
     void resetReply();
     void updateReply(boolean isCorrect);
@@ -43,7 +45,7 @@ public interface QuestionContract {
   }
 
   interface Router {
-    void navigateToCheatScreen();
+    //void navigateToCheatScreen();
     void passStateToCheatScreen(QuestionToCheatState state);
     CheatToQuestionState getStateFromCheatScreen();
   }
