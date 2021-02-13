@@ -6,6 +6,7 @@ import androidx.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+@SuppressWarnings("ALL")
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class QuestionInstrumentedTests {
