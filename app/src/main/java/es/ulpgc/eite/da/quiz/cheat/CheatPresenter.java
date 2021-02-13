@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.eite.da.quiz.app.AppMediator;
 import es.ulpgc.eite.da.quiz.app.CheatToQuestionState;
 import es.ulpgc.eite.da.quiz.app.QuestionToCheatState;
 
@@ -11,13 +12,19 @@ public class CheatPresenter implements CheatContract.Presenter {
 
   public static String TAG = CheatPresenter.class.getSimpleName();
 
+  private AppMediator mediator;
   private WeakReference<CheatContract.View> view;
   private CheatState state;
   private CheatContract.Model model;
-  private CheatContract.Router router;
+  //private CheatContract.Router router;
 
   public CheatPresenter(CheatState state) {
     this.state = state;
+  }
+
+  public CheatPresenter(AppMediator mediator) {
+    this.mediator = mediator;
+    state = mediator.getCheatState();
   }
 
 
@@ -49,7 +56,8 @@ public class CheatPresenter implements CheatContract.Presenter {
     //TODO: falta implementacion
 
     // use passed state if is necessary
-    QuestionToCheatState savedState = router.getStateFromQuestionScreen();
+    QuestionToCheatState savedState = getStateFromQuestionScreen();
+    //QuestionToCheatState savedState = router.getStateFromQuestionScreen();
     if (savedState != null) {
 
       Log.e(TAG, "savedState.answer: "+savedState.answer);
@@ -87,7 +95,8 @@ public class CheatPresenter implements CheatContract.Presenter {
 
     CheatToQuestionState passedState=new CheatToQuestionState();
     passedState.answerCheated=state.answerCheated;
-    router.passStateToQuestionScreen(passedState);
+    //router.passStateToQuestionScreen(passedState);
+    passStateToQuestionScreen(passedState);
 
     view.get().onFinish();
   }
@@ -106,6 +115,21 @@ public class CheatPresenter implements CheatContract.Presenter {
       onBackPressed();
       //view.get().onFinish();
     }
+  }
+
+  private void passStateToQuestionScreen(CheatToQuestionState state) {
+
+    //TODO: falta implementacion
+
+    mediator.setCheatToQuestionState(state);
+  }
+
+  private QuestionToCheatState getStateFromQuestionScreen() {
+
+    //TODO: falta implementacion
+
+    QuestionToCheatState state = mediator.getQuestionToCheatState();
+    return state;
   }
 
   private void showAnswer() {
@@ -127,9 +151,11 @@ public class CheatPresenter implements CheatContract.Presenter {
     this.model = model;
   }
 
+  /*
   @Override
   public void injectRouter(CheatContract.Router router) {
     this.router = router;
   }
+  */
 
 }
