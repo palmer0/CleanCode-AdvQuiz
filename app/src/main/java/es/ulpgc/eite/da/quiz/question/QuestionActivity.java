@@ -64,7 +64,7 @@ public class QuestionActivity
     //TODO: falta implementacion
 
     Intent intent = new Intent(this, CheatActivity.class);
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
   }
 
