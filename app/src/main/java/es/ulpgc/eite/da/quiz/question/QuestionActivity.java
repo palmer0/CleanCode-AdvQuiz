@@ -8,7 +8,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import es.ulpgc.eite.da.quiz.R;
-import es.ulpgc.eite.da.quiz.app.AppMediator;
 import es.ulpgc.eite.da.quiz.cheat.CheatActivity;
 
 public class QuestionActivity
@@ -28,9 +27,11 @@ public class QuestionActivity
     ((TextView) findViewById(R.id.nextButton)).setText(R.string.next_button);
     ((TextView) findViewById(R.id.cheatButton)).setText(R.string.cheat_button);
 
+    /*
     if(savedInstanceState == null) {
       AppMediator.resetInstance();
     }
+    */
 
     // do the setup
     QuestionScreen.configure(this);
