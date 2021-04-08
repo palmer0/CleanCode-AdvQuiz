@@ -46,6 +46,7 @@ public class QuizUnitTests {
 
   }
 
+
   private void updateResources1() {
 
     QuestionActivity activity1 = controller1.get();
