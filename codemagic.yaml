@@ -1,6 +1,7 @@
 # You can get more information regarding the YAML file here:
 # https://docs.codemagic.io/getting-started/yaml/
 
+
 # Workflow setup for building Native Android project
 workflows:
     # The following workflow is for generating a debug build
