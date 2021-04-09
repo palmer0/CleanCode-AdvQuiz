@@ -21,8 +21,8 @@ workflows:
           -validity 10000
       - |
         # run tests
-        ./gradlew test
-        ./gradlew connectedAndroidTest
+        ./gradlew testDebugUnitTest
+        ./gradlew connectedDebugAndroidTest
       - |  
         # build debug apk
         ./gradlew assembleDebug
