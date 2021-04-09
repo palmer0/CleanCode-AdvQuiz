@@ -43,7 +43,6 @@ public class QuizUnitTests {
 
     controller1.create().resume().visible();
     updateResources1();
-
   }
 
   private void updateResources1() {
