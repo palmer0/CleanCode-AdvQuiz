@@ -65,6 +65,7 @@ public class QuizUnitTests {
   }
 
 
+
   private void updateResources2() {
 
     CheatActivity activity2 = controller2.get();
