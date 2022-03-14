@@ -1,5 +1,8 @@
 package es.ulpgc.eite.da.quiz;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,9 +17,6 @@ import org.robolectric.android.controller.ActivityController;
 import es.ulpgc.eite.da.quiz.app.AppMediator;
 import es.ulpgc.eite.da.quiz.cheat.CheatActivity;
 import es.ulpgc.eite.da.quiz.question.QuestionActivity;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(RobolectricTestRunner.class)
 public class QuizUnitTests {
@@ -43,7 +43,9 @@ public class QuizUnitTests {
 
     controller1.create().resume().visible();
     updateResources1();
+
   }
+
 
   private void updateResources1() {
 
@@ -63,7 +65,6 @@ public class QuizUnitTests {
     next = activity1.findViewById(R.id.nextButton);
     cheat = activity1.findViewById(R.id.cheatButton);
   }
-
 
 
   private void updateResources2() {
@@ -120,7 +121,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1_thenCorrect() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question después
     //  de cargar pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -133,11 +134,11 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Option correcto
     option3.performClick();
 
-    //  THEN 
+    //  THEN
     //  mostraremos mensaje Correct ya que la respuesta
     //  del usuario corresponde con respuesta correcta
     //  mostraremos botones Option y Cheat desactivados
@@ -157,7 +158,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1Correct_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question después
     //  de cargar pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -170,12 +171,12 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Option correcto y girar la pantalla
     option3.performClick();
     rotate1();
 
-    //  THEN 
+    //  THEN
     //  mostraremos mensaje Correct ya que la respuesta
     //  del usuario corresponde con respuesta correcta
     //  mostraremos botones Option y Cheat desactivados
@@ -196,7 +197,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1_thenIncorrect() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question después
     //  de cargar pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -209,11 +210,11 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Option incorrecto
     option2.performClick();
 
-    //  THEN 
+    //  THEN
     //  mostraremos mensaje Incorrect ya que la respuesta
     //  del usuario corresponde con respuesta incorrecta
     //  mostraremos botón Option desactivado
@@ -231,7 +232,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1Correct_thenNext() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question después
     //  de responder a pregunta del cuestionario
     //  mostraremos mensaje Correct según  la respuesta del usuario
@@ -246,11 +247,11 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(false));
     assertThat(next.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Next
     next.performClick();
 
-    //  THEN 
+    //  THEN
     //  mostraremos pantalla Question con siguiente pregunta  ya cargada
     //  mostraremos botones Option y Cheat activados
     //  mostraremos botón Next desactivado
@@ -268,7 +269,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion2_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question después
     //  de responder a pregunta del cuestionario
     //  mostraremos mensaje Correct según  la respuesta del usuario
@@ -283,12 +284,12 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(false));
     assertThat(next.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Next y girar la pantalla
     next.performClick();
     rotate1();
 
-    //  THEN 
+    //  THEN
     //  mostraremos pantalla Question con siguiente pregunta  ya cargada
     //  mostraremos botones Option y Cheat activados
     //  mostraremos botón Next desactivado
@@ -308,7 +309,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1Incorrect_thenNext() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question después
     //  de responder a pregunta del cuestionario
     //  mostraremos mensaje Incorrect según  la respuesta del usuario
@@ -323,11 +324,11 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Next
     next.performClick();
 
-    //  THEN 
+    //  THEN
     //  mostraremos pantalla Question con siguiente pregunta  ya cargada
     //  mostraremos botones Option y Cheat activados
     //  mostraremos botón Next desactivado
@@ -343,7 +344,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1_thenCheat() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question sin haber respondido
     //  a pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -356,12 +357,12 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Cheat
     cheat.performClick();
     controller2.create().resume().visible();
 
-    //  THEN 
+    //  THEN
     //  visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //  antes de mostrar respuesta correcta
     //  mostraremos botones Yes y NO activados
@@ -377,7 +378,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1Cheated_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question sin haber respondido
     //  a pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -390,14 +391,14 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Cheat y girar la pantalla
     cheat.performClick();
     controller2.create().resume().visible();
     rotate1();
     rotate2();
 
-    //  THEN 
+    //  THEN
     //  visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //  antes de mostrar respuesta correcta
     //  mostraremos botones Yes y NO activados
@@ -412,7 +413,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1Incorrect_thenCheat() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question después
     //  de responder a pregunta del cuestionario
     //  mostraremos mensaje Incorrect segun la respuesta del usuario
@@ -427,12 +428,12 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Cheat
     cheat.performClick();
     controller2.create().resume().visible();
 
-    //  THEN 
+    //  THEN
     //  visualizaremos pantalla Cheat donde se nos pedirá confirmación
     //  antes de mostrar respuesta correcta
     //  mostraremos botones Yes y NO activados
@@ -448,7 +449,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1Cheated_thenNo() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
@@ -460,11 +461,11 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón No
     no.performClick();
 
-    //  THEN 
+    //  THEN
     //  volveremos a pantalla Question
     //  mostraremos pregunta del cuestionario existente
     //  antes de iniciar pantalla Cheat
@@ -484,7 +485,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1CheatedNo_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
@@ -496,12 +497,12 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón No y girar la pantalla
     no.performClick();
     rotate1();
 
-    //  THEN 
+    //  THEN
     //  volveremos a pantalla Question
     //  mostraremos pregunta del cuestionario existente
     //  antes de iniciar pantalla Cheat
@@ -521,7 +522,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1IncorrectCheated_thenNo() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat después de responder
     //  a pregunta del cuestionario en pantalla Question
     //  mostraremos mensaje Incorrect segun la respuesta del usuario
@@ -535,11 +536,11 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón No
     no.performClick();
 
-    //  THEN 
+    //  THEN
     //  volveremos a pantalla Question donde mostraremos pregunta
     //  del cuestionario existente antes de iniciar pantalla Cheat
     //  mostraremos botones Next y Cheat activados
@@ -558,7 +559,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1IncorrectCheatedNo_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat después de responder
     //  a pregunta del cuestionario en pantalla Question
     //  mostraremos mensaje Incorrect segun la respuesta del usuario
@@ -572,12 +573,12 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón No y girar la pantalla
     no.performClick();
     rotate1();
 
-    //  THEN 
+    //  THEN
     //  volveremos a pantalla Question donde mostraremos pregunta
     //  del cuestionario existente antes de iniciar pantalla Cheat
     //  mostraremos botones Next y Cheat activados
@@ -597,7 +598,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1Cheated_thenYes() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
@@ -609,11 +610,11 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Yes
     yes.performClick();
 
-    //  THEN 
+    //  THEN
     //  visualizaremos respuesta correcta a pregunta
     //  del cuestionario mostrada actualmente en pantalla Question
     //  mostraremos botones Yes y NO desactivados
@@ -629,7 +630,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1CheatedYes_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
@@ -641,13 +642,13 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Yes y girar la pantalla
     yes.performClick();
     rotate1();
     rotate2();
 
-    //  THEN 
+    //  THEN
     //  visualizaremos respuesta correcta a pregunta
     //  del cuestionario mostrada actualmente en pantalla Question
     //  mostraremos botones Yes y NO desactivados
@@ -663,7 +664,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1IncorrectCheated_thenYes() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat después
     //  de responder a pregunta del cuestionario
     //  mostraremos mensaje Incorrect segun la respuesta del usuario
@@ -678,11 +679,11 @@ public class QuizUnitTests {
     assertThat(no.isEnabled(), equalTo(true));
 
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Yes
     yes.performClick();
 
-    //  THEN 
+    //  THEN
     //  visualizaremos respuesta correcta a pregunta
     //  del cuestionario mostrada actualmente en pantalla Question
     //  mostraremos botones Yes y NO desactivados
@@ -697,7 +698,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1IncorrectCheatedYes_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat después
     //  de responder a pregunta del cuestionario
     //  mostraremos mensaje Incorrect segun la respuesta del usuario
@@ -712,13 +713,13 @@ public class QuizUnitTests {
     assertThat(no.isEnabled(), equalTo(true));
 
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Yes y girar la pantalla
     yes.performClick();
     rotate1();
     rotate2();
 
-    //  THEN 
+    //  THEN
     //  visualizaremos respuesta correcta a pregunta
     //  del cuestionario mostrada actualmente en pantalla Question
     //  mostraremos botones Yes y NO desactivados
@@ -733,7 +734,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1Cheated_thenYesAndBack() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
@@ -745,14 +746,14 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Yes y luego el botón Back
     yes.performClick();
     CheatActivity activity2 = controller2.get();
     activity2.onBackPressed();
     controller1.resume();
 
-    //  THEN 
+    //  THEN
     //  volveremos a pantalla Question donde mostraremos
     //  pregunta siguiente del cuestionario antes de iniciar pantalla Cheat
     //  mostraremos botones Option y Cheat activados
@@ -772,7 +773,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1CheatedYesAndBack_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
@@ -784,7 +785,7 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Yes, luego el botón Back y girar la pantalla
     yes.performClick();
     CheatActivity activity2 = controller2.get();
@@ -792,7 +793,7 @@ public class QuizUnitTests {
     controller1.resume();
     rotate1();
 
-    //  THEN 
+    //  THEN
     //  volveremos a pantalla Question donde mostraremos
     //  pregunta siguiente del cuestionario antes de iniciar pantalla Cheat
     //  mostraremos botones Option y Cheat activados
@@ -810,7 +811,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion1IncorrectCheated_thenYesAndBack() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat después
     //  de responder a pregunta del cuestionario en pantalla Question
     //  mostraremos mensaje Incorrect segun la respuesta del usuario
@@ -824,14 +825,14 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Yes y luego el botón Back
     yes.performClick();
     CheatActivity activity2 = controller2.get();
     activity2.onBackPressed();
     controller1.resume();
 
-    //  THEN 
+    //  THEN
     //  volveremos a pantalla Question donde mostraremos pregunta
     //  siguiente del cuestionario antes de iniciar pantalla Cheat
     //  mostraremos botones Option y Cheat activados
@@ -851,7 +852,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion2_thenCorrect() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question
     //  después de cargar pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -866,11 +867,11 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Option correcto
     option3.performClick();
 
-    //  THEN 
+    //  THEN
     //  mostraremos mensaje Correct segun la respuesta del usuario
     //  mostraremos botones Option, Next y Cheat desactivados
     assertThat(question.getText().toString(), equalTo(quiz[5]));
@@ -887,7 +888,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion2Correct_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question
     //  después de cargar pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -902,12 +903,12 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Option correcto y girar la pantalla
     option3.performClick();
     rotate1();
 
-    //  THEN 
+    //  THEN
     //  mostraremos mensaje Correct segun la respuesta del usuario
     //  mostraremos botones Option, Next y Cheat desactivados
     updateResources1();
@@ -923,7 +924,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion8_thenCorrect() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question
     //  después de cargar pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -950,11 +951,11 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Option correcto
     option1.performClick();
 
-    //  THEN 
+    //  THEN
     //  mostraremos mensaje Correct segun la respuesta del usuario
     //  mostraremos botones Option, Next y Cheat desactivados
     assertThat(question.getText().toString(), equalTo(quiz[35]));
@@ -971,7 +972,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion8Correct_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question
     //  después de cargar pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -998,12 +999,12 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Option correcto y girar la pantalla
     option1.performClick();
     rotate1();
 
-    //  THEN 
+    //  THEN
     //  mostraremos mensaje Correct segun la respuesta del usuario
     //  mostraremos botones Option, Next y Cheat desactivados
     updateResources1();
@@ -1019,7 +1020,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion10_thenCorrect() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question
     //  después de cargar pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -1050,11 +1051,11 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Option correcto
     option1.performClick();
 
-    //  THEN 
+    //  THEN
     //  mostraremos mensaje Correct segun la respuesta del usuario
     //  mostraremos botones Option, Next y Cheat desactivados
     assertThat(question.getText().toString(), equalTo(quiz[45]));
@@ -1070,7 +1071,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion10Correct_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question
     //  después de cargar pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -1101,12 +1102,12 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Option correcto y girar la pantalla
     option1.performClick();
     rotate1();
 
-    //  THEN 
+    //  THEN
     //  mostraremos mensaje Correct segun la respuesta del usuario
     //  mostraremos botones Option, Next y Cheat desactivados
     updateResources1();
@@ -1122,7 +1123,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion10_thenIncorrect() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Question
     //  después de cargar pregunta del cuestionario
     //  mostraremos botones Option y Cheat activados
@@ -1153,11 +1154,11 @@ public class QuizUnitTests {
     assertThat(cheat.isEnabled(), equalTo(true));
     assertThat(next.isEnabled(), equalTo(false));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botón Option incorrecto
     option2.performClick();
 
-    //  THEN 
+    //  THEN
     //  mostraremos mensaje Incorrect segun la respuesta del usuario
     //  mostraremos botones Option y Next desactivados
     //  mostraremos botón Cheat activado
@@ -1173,7 +1174,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion10Cheated_thenYesAndBack() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat sin responder
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
@@ -1203,14 +1204,14 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar boton Yes y luego Back
     yes.performClick();
     CheatActivity activity2 = controller2.get();
     activity2.onBackPressed();
     controller1.resume();
 
-    //  THEN 
+    //  THEN
     //  volveremos a pantalla Question donde mostraremos pregunta
     //  del cuestionario existente antes de iniciar pantalla Cheat
     //  mostraremos botón Cheat activado
@@ -1228,7 +1229,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion10CheatedYesAndBack_thenRotate() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat sin responder
     //  a  pregunta del cuestionario en pantalla Question
     //  mostraremos botones Yes y NO activados
@@ -1258,7 +1259,7 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar boton Yes, luego Back y girar la pantalla
     yes.performClick();
     CheatActivity activity2 = controller2.get();
@@ -1266,7 +1267,7 @@ public class QuizUnitTests {
     controller1.resume();
     rotate1();
 
-    //  THEN 
+    //  THEN
     //  volveremos a pantalla Question donde mostraremos pregunta
     //  del cuestionario existente antes de iniciar pantalla Cheat
     //  mostraremos botón Cheat activado
@@ -1284,7 +1285,7 @@ public class QuizUnitTests {
   @Test
   public void whenQuestion10IncorrectCheated_thenYesAndBack() {
 
-    //  GIVEN 
+    //  GIVEN
     //  encontrándonos en pantalla Cheat después de responder
     //  a pregunta del cuestionario en pantalla Question
     //  mostraremos mensaje Incorrect segun la respuesta del usuario
@@ -1316,14 +1317,14 @@ public class QuizUnitTests {
     assertThat(yes.isEnabled(), equalTo(true));
     assertThat(no.isEnabled(), equalTo(true));
 
-    //  WHEN 
+    //  WHEN
     //  al pulsar botones Yes y Back
     yes.performClick();
     CheatActivity activity2 = controller2.get();
     activity2.onBackPressed();
     controller1.resume();
 
-    //  THEN 
+    //  THEN
     //  volveremos a pantalla Question donde mostraremos pregunta
     //  del cuestionario existente antes de iniciar pantalla Cheat
     //  mostraremos botón Cheat activado
