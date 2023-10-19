@@ -33,7 +33,7 @@ import es.ulpgc.eite.da.quiz.question.QuestionActivity;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class QuizInstrumentedTests {
+public class QuizEspressoTests {
 
 
   @Rule

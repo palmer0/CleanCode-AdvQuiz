@@ -1,5 +1,8 @@
 package es.ulpgc.eite.da.quiz;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,11 +17,8 @@ import org.robolectric.android.controller.ActivityController;
 import es.ulpgc.eite.da.quiz.cheat.CheatActivity;
 import es.ulpgc.eite.da.quiz.question.QuestionActivity;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-
 @RunWith(RobolectricTestRunner.class)
-public class ExtraUnitTest {
+public class ExtraRobolectricTest {
 
   ActivityController<QuestionActivity> controller1;
   ActivityController<CheatActivity> controller2;

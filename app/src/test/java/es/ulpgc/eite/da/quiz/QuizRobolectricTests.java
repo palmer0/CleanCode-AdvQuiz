@@ -8,8 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.android.controller.ActivityController;
@@ -19,7 +21,8 @@ import es.ulpgc.eite.da.quiz.cheat.CheatActivity;
 import es.ulpgc.eite.da.quiz.question.QuestionActivity;
 
 @RunWith(RobolectricTestRunner.class)
-public class QuizUnitTests {
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class QuizRobolectricTests {
 
   ActivityController<QuestionActivity> controller1;
   ActivityController<CheatActivity> controller2;
@@ -119,7 +122,7 @@ public class QuizUnitTests {
   }
 
   @Test
-  public void whenQuestion1_thenCorrect() {
+  public void test01_whenQuestion1_thenCorrect() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question después
@@ -156,7 +159,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1Correct_thenRotate() {
+  public void test02_whenQuestion1Correct_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question después
@@ -195,7 +198,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1_thenIncorrect() {
+  public void test03_whenQuestion1_thenIncorrect() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question después
@@ -230,7 +233,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1Correct_thenNext() {
+  public void test04_whenQuestion1Correct_thenNext() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question después
@@ -267,7 +270,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion2_thenRotate() {
+  public void test05_whenQuestion2_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question después
@@ -307,7 +310,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1Incorrect_thenNext() {
+  public void test06_whenQuestion1Incorrect_thenNext() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question después
@@ -342,7 +345,7 @@ public class QuizUnitTests {
   }
 
   @Test
-  public void whenQuestion1_thenCheat() {
+  public void test07_whenQuestion1_thenCheat() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question sin haber respondido
@@ -376,7 +379,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1Cheated_thenRotate() {
+  public void test08_whenQuestion1Cheated_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question sin haber respondido
@@ -411,7 +414,7 @@ public class QuizUnitTests {
   }
 
   @Test
-  public void whenQuestion1Incorrect_thenCheat() {
+  public void test09_whenQuestion1Incorrect_thenCheat() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question después
@@ -447,7 +450,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1Cheated_thenNo() {
+  public void test10_whenQuestion1Cheated_thenNo() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
@@ -483,7 +486,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1CheatedNo_thenRotate() {
+  public void test11_whenQuestion1CheatedNo_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
@@ -520,7 +523,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1IncorrectCheated_thenNo() {
+  public void test12_whenQuestion1IncorrectCheated_thenNo() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat después de responder
@@ -557,7 +560,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1IncorrectCheatedNo_thenRotate() {
+  public void test13_whenQuestion1IncorrectCheatedNo_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat después de responder
@@ -596,7 +599,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1Cheated_thenYes() {
+  public void test14_whenQuestion1Cheated_thenYes() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
@@ -628,7 +631,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1CheatedYes_thenRotate() {
+  public void test15_whenQuestion1CheatedYes_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
@@ -662,7 +665,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1IncorrectCheated_thenYes() {
+  public void test16_whenQuestion1IncorrectCheated_thenYes() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat después
@@ -696,7 +699,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1IncorrectCheatedYes_thenRotate() {
+  public void test17_whenQuestion1IncorrectCheatedYes_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat después
@@ -732,7 +735,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1Cheated_thenYesAndBack() {
+  public void test18_whenQuestion1Cheated_thenYesAndBack() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
@@ -771,7 +774,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion1CheatedYesAndBack_thenRotate() {
+  public void test19_whenQuestion1CheatedYesAndBack_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat sin haber respondido
@@ -809,7 +812,7 @@ public class QuizUnitTests {
   }
 
   @Test
-  public void whenQuestion1IncorrectCheated_thenYesAndBack() {
+  public void test20_whenQuestion1IncorrectCheated_thenYesAndBack() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat después
@@ -850,7 +853,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion2_thenCorrect() {
+  public void test21_whenQuestion2_thenCorrect() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question
@@ -886,7 +889,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion2Correct_thenRotate() {
+  public void test22_whenQuestion2Correct_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question
@@ -922,7 +925,7 @@ public class QuizUnitTests {
   }
 
   @Test
-  public void whenQuestion8_thenCorrect() {
+  public void test23_whenQuestion8_thenCorrect() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question
@@ -970,7 +973,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion8Correct_thenRotate() {
+  public void test24_whenQuestion8Correct_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question
@@ -1018,7 +1021,7 @@ public class QuizUnitTests {
   }
 
   @Test
-  public void whenQuestion10_thenCorrect() {
+  public void test25_whenQuestion10_thenCorrect() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question
@@ -1069,7 +1072,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion10Correct_thenRotate() {
+  public void test26_whenQuestion10Correct_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question
@@ -1121,7 +1124,7 @@ public class QuizUnitTests {
   }
 
   @Test
-  public void whenQuestion10_thenIncorrect() {
+  public void test27_whenQuestion10_thenIncorrect() {
 
     //  GIVEN
     //  encontrándonos en pantalla Question
@@ -1172,7 +1175,7 @@ public class QuizUnitTests {
   }
 
   @Test
-  public void whenQuestion10Cheated_thenYesAndBack() {
+  public void test28_whenQuestion10Cheated_thenYesAndBack() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat sin responder
@@ -1227,7 +1230,7 @@ public class QuizUnitTests {
 
 
   @Test
-  public void whenQuestion10CheatedYesAndBack_thenRotate() {
+  public void test29_whenQuestion10CheatedYesAndBack_thenRotate() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat sin responder
@@ -1283,7 +1286,7 @@ public class QuizUnitTests {
   }
 
   @Test
-  public void whenQuestion10IncorrectCheated_thenYesAndBack() {
+  public void test30_whenQuestion10IncorrectCheated_thenYesAndBack() {
 
     //  GIVEN
     //  encontrándonos en pantalla Cheat después de responder
