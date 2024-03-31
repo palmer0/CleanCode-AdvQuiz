@@ -14,6 +14,7 @@ import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.android.controller.ActivityController;
 
+import es.ulpgc.eite.da.quiz.app.AppMediator;
 import es.ulpgc.eite.da.quiz.cheat.CheatActivity;
 import es.ulpgc.eite.da.quiz.question.QuestionActivity;
 
@@ -34,6 +35,9 @@ public class ExtraRobolectricTest {
 
   @Before
   public void setUp(){
+
+
+    AppMediator.resetInstance();
 
     controller1 = Robolectric.buildActivity(QuestionActivity.class);
     controller2 = Robolectric.buildActivity(CheatActivity.class);
